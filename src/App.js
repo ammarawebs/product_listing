@@ -39,22 +39,18 @@ function App() {
    
   } 
 
-  useEffect(()=>{
-
-  },[productLink])
-
-  
 
   return (
     <>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path='/' element={<HomePage 
             productLink = {GettingProductLink}
           />}/>
           <Route path={`/products/:${productLink.id}`} element={<Product_details/>}/>
         </Routes>
-      </Router>
+      </Router> */}
+      <HomePage/>
         
     </>
   );
