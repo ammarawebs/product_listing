@@ -1,5 +1,5 @@
 
-import { useEffect, useReducer, useState } from 'react';
+import React ,{ useEffect, useReducer, useState } from 'react';
 import './App.css';
 import axios from './axios';
 import { BrowserRouter as Router , Route , Routes } from 'react-router-dom';
@@ -30,7 +30,7 @@ function App() {
   const [productLink, dispatch_productLink] = useReducer(Reducer_link , initial_link)
 
 
-  console.log(productLink.title)
+  console.log(productLink.id)
 
 
   const GettingProductLink =(post)=>{
@@ -41,18 +41,19 @@ function App() {
 
 
   return (
-    <>
-      {/* <Router>
+    <React.Fragment>
+    
+      <>
         <Routes>
           <Route path='/' element={<HomePage 
             productLink = {GettingProductLink}
           />}/>
           <Route path={`/products/:${productLink.id}`} element={<Product_details/>}/>
         </Routes>
-      </Router> */}
-      <HomePage/>
+      </>
+      {/* <HomePage/> */}
         
-    </>
+    </React.Fragment>
   );
 }
 
